@@ -116,6 +116,18 @@ h1 .c{color:var(--sky)}
 #send:disabled{opacity:.4}
 .priv{font-size:11.5px;font-weight:600;opacity:.75;margin:12px 4px 0}
 
+
+/* try it: mapswipe */
+.try{background:var(--sky);color:var(--k);padding:46px 0 52px}
+.try h2{font-size:clamp(46px,14.5vw,84px);margin:8px 0 0}
+.try .sub{font-size:17px;font-weight:600;margin:12px 0 0;max-width:26em}
+.try ol{list-style:none;counter-reset:n;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.try li{counter-increment:n;display:flex;gap:12px;align-items:flex-start;background:var(--k);color:var(--w);border-radius:22px;padding:14px 16px;font-size:15.5px;font-weight:600;line-height:1.35}
+.try li::before{content:counter(n);flex:none;width:28px;height:28px;border-radius:50%;background:var(--lime);color:var(--k);font-weight:900;display:grid;place-items:center;font-size:14px}
+.try .cta{margin-top:22px}
+.try .btn{background:var(--k);color:var(--w)}
+.try .note{font-size:12.5px;font-weight:600;opacity:.8;margin:16px 0 0;max-width:30em}
+
 /* 4 · end */
 .end{padding:44px 0 calc(60px + env(safe-area-inset-bottom))}
 .end .real{font-size:14.5px;font-weight:500;opacity:.8;border-left:4px solid var(--pink);padding-left:12px;margin:0;max-width:30em}
@@ -171,6 +183,21 @@ h1 .c{color:var(--sky)}
   </div>
 </section>
 
+<section class="try" id="try">
+  <div class="in">
+    <span class="tag">one way to try it · 2 minutes</span>
+    <h2 class="x">Put a place on the map</h2>
+    <p class="sub">That's the idea behind a mapathon. MapSwipe is a free app where you swipe through satellite photos and tap the buildings, so places missing from maps finally show up. Try it, it's weirdly addictive.</p>
+    <ol>
+      <li>Download MapSwipe (free) from the link below.</li>
+      <li>Do the quick tutorial so you know what a building looks like from above.</li>
+      <li>Tap the squares with buildings or roads, then swipe to the next one.</li>
+    </ol>
+    <div class="cta"><a class="btn" href="https://mapswipe.org" target="_blank" rel="noopener">get MapSwipe</a></div>
+    <p class="note">MapSwipe is made by the Missing Maps community, not by us. It's just one example of the kind of mapping the theme is about. Not sure about a square? Skip it, a wrong answer is worse than a blank one.</p>
+  </div>
+</section>
+
 <section class="end" id="end">
   <div class="in">
     <p class="real">Quick note: the prize pool and partnerships are goals the team works on after the vote, and that's when roles get chosen too.</p>
@@ -192,6 +219,7 @@ function toast(t){var x=$('toast');x.textContent=t;x.classList.add('on');setTime
 
 /* ---------- Bosla brain ---------- */
 var FACTS=[
+"TRY IT YOURSELF: MapSwipe is a free app from the Missing Maps community (mapswipe.org, not made by the campaign). You swipe through satellite photos and tap squares with buildings or roads so missing places get mapped. About 2 minutes to try, and a good example of what a mapathon feels like. The site has a download link. Encourage students to try it.",
 "THE CAMPAIGN",
 "- Jad (Jadallah Badarneh, AUC sophomore) is running for Chairperson of the 2027 Tomorrow's Leaders (TL) Annual Symposium at AUC. Kenzie Botros is running with him as Vice Chair.",
 "- Their concept: 'Off the Map: Who Gets Counted in the Digital Future?' (Arabic: خارج الخريطة).",
@@ -284,6 +312,7 @@ function bubble(cls,text){var d=el('div','msg '+cls,text);log.appendChild(d);log
 function setBusy(b){busy=b;sendBtn.disabled=b;chat.classList.toggle('busy',b);}
 function setMode(live){modeEl.textContent=live?'ai on':'quick replies';modeEl.classList.toggle('live',live);}
 var KB=[
+ {k:["mapswipe","map swipe","swipe","try mapping","try it","download app","app to try","how do i try","tinder for maps"],a:"mapswipe is a free app where you swipe through satellite photos and tap the squares that have buildings or roads, so places missing from maps get added. it takes about 2 minutes to try, and it's a good taste of what a mapathon is about. there's a download link on this page."},
  {k:["openstreetmap","open street map","osm","wikipedia for maps"],a:"openstreetmap is a free map of the world that anyone can edit, kind of like wikipedia for maps. volunteers add roads, buildings and places, and that's how a lot of unmapped areas get on the map for the first time."},
  {k:["missing maps","humanitarian","disaster","earthquake","flood","crisis","red cross"],a:"there's a project called missing maps, started in 2014 by the humanitarian openstreetmap team, doctors without borders and the red cross. volunteers map vulnerable places from satellite photos before a crisis hits, so aid workers know where people actually live."},
  {k:["address","addresses","plus code","plus codes","street name","house number","delivery"],a:"lots of people live where there are no street names or house numbers. tools like google's plus codes give any spot a short code that works as an address, so people can get deliveries, sign up for services, or be found in an emergency."},
