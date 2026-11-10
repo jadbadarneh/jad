@@ -33,7 +33,7 @@ html.js .rv{opacity:0;translate:0 22px;transition:opacity .55s ease,translate .5
 html.js .rv.in{opacity:1;translate:0 0}
 
 /* top bar + stories */
-.top{position:sticky;top:0;z-index:20;background:var(--paper);margin-inline:calc(-1*max(16px,env(safe-area-inset-left)));padding:calc(8px + env(safe-area-inset-top)) 16px 0;border-bottom:1.5px solid var(--ink)}
+.top{position:sticky;top:0;z-index:20;background:var(--paper);margin-inline:calc(-1*max(16px,env(safe-area-inset-left)));padding:calc(10px + env(safe-area-inset-top)) 16px 10px;border-bottom:1.5px solid var(--ink)}
 .bar{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .handle{font-weight:700;font-size:15px;display:flex;align-items:center;gap:6px}
 .handle b{width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block}
@@ -205,97 +205,25 @@ h1 .row{display:block}
 #toast.on{transform:translate(-50%,0)}
 @media (min-width:700px){.slide{flex-basis:46%}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq div,.msg,.card,.dm.busy .ava::before{animation:none}html.js .rv{opacity:1;translate:0 0;transition:none}}
+.pol.duo{position:relative;margin:26px 2% 0;transform:rotate(-1.5deg);--ar:1290/640}
+.fineprint{font-size:14.5px;color:var(--soft);border:1.5px dashed var(--ink);padding:12px 14px;border-radius:14px;margin:0}
+.end .votehand{position:static;width:auto;transform:rotate(-3deg);margin:10px 0 0;font-size:clamp(34px,10vw,52px)}
+.end{margin-top:34px}
 </style></head>
 <body>
 <div class="wrap">
   <div class="top">
-    <div class="bar"><span class="handle"><b></b>offthemap.tl</span><a class="votepill" href="#us">vote jad + kenzie</a></div>
-    <nav class="stories" aria-label="Sections">
-      <a class="st" href="#idea"><i><span style="--c:var(--blue);--k:#fff">?</span></i><em>the idea</em></a>
-      <a class="st" href="#tracks"><i><span style="--c:var(--yellow)">4</span></i><em>tracks</em></a>
-      <a class="st" href="#foryou"><i><span style="background-image:url(img/everyone.webp)"></span></i><em>for you</em></a>
-      <a class="st" href="#levels"><i><span style="--c:var(--red);--k:#fff">1·2·3</span></i><em>levels</em></a>
-      <a class="st" href="#match"><i><span style="--c:var(--ink);--k:var(--yellow)">★</span></i><em>your match</em></a>
-      <a class="st" href="#bosla"><i><span style="--c:var(--yellow)">B</span></i><em>ask bosla</em></a>
-      <a class="st" href="#us"><i><span style="background-image:url(img/jad-smile.webp)"></span></i><em>us</em></a>
-    </nav>
+    <div class="bar"><span class="handle"><b></b>offthemap.tl</span><a class="votepill" href="#end">vote jad + kenzie</a></div>
+    
   </div>
 
   <header class="hero">
     <span class="mono">TL Symposium 2027 · a proposal by Jad + Kenzie</span>
     <h1><span class="row">Off<span class="the">the</span></span><span class="row">Map</span><span class="arab" lang="ar">خارج الخريطة</span></h1>
-    <div class="collage" aria-hidden="false">
-      <div class="scrap"><canvas id="dots"></canvas></div>
-      <p class="note1 hand">who gets counted in the digital future?
-        <svg viewBox="0 0 70 60" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 4C52 30 34 40 10 48"/><path d="M24 36 9 48l18 6"/></svg></p>
-      <figure class="pol rv" style="left:3%;top:30%;width:60%;transform:rotate(-4deg);z-index:2"><span class="tape" style="left:32%;top:-12px;transform:rotate(-7deg)"></span><img src="img/jad-peek.webp" alt="Jad pointing at the camera through a library shelf" loading="eager"><figcaption>jad, asking you things</figcaption></figure>
-      <figure class="pol rv" style="right:0;top:44%;width:46%;transform:rotate(5deg);z-index:3;--ar:4/5"><span class="tape" style="right:18%;top:-11px;transform:rotate(9deg)"></span><img src="img/kenzie-yellow.webp" alt="Kenzie mid-sentence"><figcaption>kenzie, also asking</figcaption></figure>
-      <span class="youtag">you? not on it yet</span>
-    </div>
-    <p class="lede">A student-run symposium about the places, people and voices the digital world skips. <b>You pick the part you care about, and how much of your time it gets.</b></p>
-    <div class="cta"><a class="btn" href="#match">find my spot</a><a class="btn y" href="#bosla">ask bosla anything</a></div>
+    <figure class="pol duo rv"><span class="tape" style="left:38%;top:-12px;transform:rotate(-5deg)"></span><img src="img/jad-kenzie.webp" alt="Jad and Kenzie" loading="eager"><figcaption>jad + kenzie, asking you things</figcaption></figure>
+    <p class="lede">A student-run symposium about who the digital world leaves out. <b>Answer 3 questions to see where you'd fit</b>, or ask our chatbot anything.</p>
+    <div class="cta"><a class="btn" href="#match">find my spot</a><a class="btn y" href="#bosla">ask bosla</a></div>
   </header>
-
-  <div class="marq" aria-hidden="true"><div id="marq"></div></div>
-
-  <section id="idea">
-    <h2><span class="it">the</span> idea</h2>
-    <p class="sub">Four swipes. That's the whole pitch.</p>
-    <p class="swipe">swipe →</p>
-    <div class="car" id="car">
-      <article class="slide" style="--c:var(--blue);--k:#fff"><div class="n mono"><span>unseen places</span><span>1/4</span></div>
-        <svg class="art" viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="3"><path d="M0 40h200M0 95h200M0 150h200M45 0v200M110 0v200M165 0v200" opacity=".45"/><circle cx="118" cy="112" r="52" fill="#2340F0" stroke-dasharray="7 8"/><text x="118" y="130" text-anchor="middle" font-family="Anton,Impact" font-size="56" fill="#fff" stroke="none">?</text></svg>
-        <p>If your street isn't on the map, the delivery guy <span class="it">isn't coming.</span></p><small>Neither is the ambulance route, or the budget.</small></article>
-      <article class="slide" style="--c:var(--yellow);--k:var(--ink)"><div class="n mono"><span>uncounted people</span><span>2/4</span></div>
-        <svg class="art" viewBox="0 0 200 200" stroke="#17130F" stroke-width="7" stroke-linecap="round" fill="none"><path d="M30 60v70M52 60v70M74 60v70M96 60v70M18 122 108 68M130 60v70M152 60v70"/><path d="M174 60v70" stroke="#F24B2B" stroke-dasharray="2 14"/></svg>
-        <p>If you're not in the data, nobody <span class="it">planned for you.</span></p><small>Decisions get made on spreadsheets. Some people never make it into the rows.</small></article>
-      <article class="slide" style="--c:var(--red);--k:#fff"><div class="n mono"><span>unheard voices</span><span>3/4</span></div>
-        <svg class="art" viewBox="0 0 200 200" fill="#fff"><rect x="14" y="90" width="12" height="40" rx="6"/><rect x="36" y="60" width="12" height="100" rx="6"/><rect x="58" y="78" width="12" height="64" rx="6"/><rect x="80" y="40" width="12" height="140" rx="6"/><rect x="102" y="84" width="12" height="52" rx="6"/><text x="160" y="150" text-anchor="middle" font-family="Rakkas,serif" font-size="110">ض</text></svg>
-        <p>Your phone gets a Californian. It does not get <span class="it">your teta.</span></p><small>Tech is trained on a few big languages. Dialects get the leftovers.</small></article>
-      <article class="slide" style="--c:var(--ink);--k:var(--paper)"><div class="n mono"><span>who draws the map?</span><span>4/4</span></div>
-        <svg class="art" viewBox="0 0 200 200" fill="none" stroke="#F6D94A" stroke-width="5" stroke-linecap="round"><path d="M20 150c30-60 50 20 80-30s40-10 80-70"/><path d="m170 40 14 14-8 8-14-14z" fill="#F6D94A"/></svg>
-        <p>So: who gets counted? And who <span class="it">decides?</span></p><small>That's the symposium. Students working on it, with a competition (the Mapathon) in the middle.</small></article>
-    </div>
-    <div class="dots" id="dotsNav"><i class="on"></i><i></i><i></i><i></i></div>
-  </section>
-
-  <section id="tracks">
-    <h2>four <span class="it">tracks</span></h2>
-    <p class="sub">Pick the one that annoys you most. Tap a pin and Bosla explains it. Each track is run by its own student committee: logistics, PR and HR.</p>
-    <div class="board" id="board"></div>
-  </section>
-
-  <section id="foryou">
-    <h2>ok but what's <span class="it">in it</span> for me</h2>
-    <p class="sub">We asked around. Everyone said the same thing. Fair. Here's the receipt.</p>
-    <div class="pair">
-      <figure class="pol wide rv"><span class="tape" style="left:8%;top:-12px;transform:rotate(-6deg)"></span><img src="img/everyone.webp" alt="Four students from the campaign video, printed in blue halftone" loading="lazy"><figcaption>literally everyone: "what's in it for me?"</figcaption></figure>
-      <div class="receipt rv">
-        <h3>Off the Map</h3><div class="c">TL symposium 2027 · what you walk away with</div>
-        <ul>
-          <li><span>Real work you can talk about in interviews</span><span>if you contribute</span></li>
-          <li><span>People from across TL you'd never meet in class</span><span>included</span></li>
-          <li><span>A problem you actually care about</span><span>you pick the track</span></li>
-          <li><span>Running a committee and a team</span><span>heads · limited spots</span></li>
-          <li><span>A shot at the Mapathon</span><span>prize pool is a goal</span></li>
-          <li><span>Homework</span><span>0 for observers</span></li>
-        </ul>
-        <div class="tot"><span>Time it costs</span><span>you decide</span></div>
-        <p class="fine">No certificates promised. No sponsors signed yet. We'd rather tell you now.</p>
-        <div class="barcode"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="levels">
-    <h2>pick your <span class="it">level</span></h2>
-    <p class="sub">Same symposium, three ways in. You choose based on your semester, not ours.</p>
-    <div class="tix">
-      <div class="tk rv" style="--c:var(--yellow);--k:var(--ink)"><div class="stub">01</div><div class="in"><b>Observer</b><span class="mono">show up</span><p>Come, listen, learn, meet people. No tasks, no meetings.</p><span class="hand">good if you have five midterms and one brain cell</span></div></div>
-      <div class="tk rv" style="--c:var(--blue);--k:#fff"><div class="stub">02</div><div class="in"><b>Contributor</b><span class="mono">own one thing</span><p>Join one track's committee (logistics, PR or HR) and own a real task from start to finish.</p><span class="hand">good if you want something real to point at</span></div></div>
-      <div class="tk rv" style="--c:var(--red);--k:#fff"><div class="stub">03</div><div class="in"><b>Head</b><span class="mono">run it</span><p>Lead a committee and the people in it. Limited spots, decided after the vote, not before.</p><span class="hand">good if you'd rather run it than attend it</span></div></div>
-    </div>
-  </section>
 
   <section id="match">
     <h2>find your <span class="it">spot</span></h2>
@@ -315,38 +243,14 @@ h1 .row{display:block}
     </div>
   </section>
 
-  <section id="realtalk">
-    <div class="sticky rv">
-      <h3>real talk</h3>
-      <ul>
-        <li><i class="y">yes</i><span>A full plan: four tracks, three levels, one Mapathon.</span></li>
-        <li><i class="y">yes</i><span>Someone who's done this before. Jad worked on partnerships and funding for the 2026 symposium.</span></li>
-        <li><i>not yet</i><span>Sponsors. There's a list of 30+ potential partners. None have signed.</span></li>
-        <li><i>not yet</i><span>The EGP 300,000 prize pool. It's the goal, not money in a bank.</span></li>
-        <li><i>not yet</i><span>Date, venue, speakers. Those get planned after the vote.</span></li>
-        <li><i>not yet</i><span>Roles. Nothing is handed out before the vote.</span></li>
-      </ul>
-      <p class="hand">we'd rather under-promise.</p>
-    </div>
-  </section>
-
-  <section id="us">
-    <h2>hi, it's <span class="it">us</span></h2>
-    <div class="us">
-      <figure class="pol rv"><img src="img/jad-smile.webp" alt="Jad in the library" loading="lazy"><figcaption>jad · chair</figcaption></figure>
-      <figure class="pol rv"><img src="img/kenzie-out.webp" alt="Kenzie on campus" loading="lazy"><figcaption>kenzie · vice chair</figcaption></figure>
-    </div>
-    <p class="bio"><b>Jad Badarneh</b> is a sophomore running for Chairperson. He helped organise the 2026 TL Symposium on the partnerships and funding side, was logistics director of the Language and International Club, and co-led the campus hunt that welcomed 60 new TL scholars. <b>Kenzie Botros</b> is running with him as Vice Chair.</p>
-    <div class="end">
-      <p class="big">Put yourself <span class="it">on the</span> map.</p>
-      <figure class="pol"><span class="tape" style="left:30%;top:-12px;transform:rotate(-5deg)"></span><img src="img/jad-aisle-ht.webp" alt="Jad looking back down a library aisle" loading="lazy"><figcaption>see you on it</figcaption></figure>
-      <p class="hand">vote jad + kenzie</p>
-    </div>
-    <div class="cta"><button class="btn" id="share" type="button">send to the group chat</button><a class="btn w" href="#match">redo my match</a></div>
+  <section id="end">
+    <p class="fineprint">Real talk: the EGP 300,000 prize pool is a goal, the 30+ partners are potential, and no roles are handed out before the vote. We'd rather tell you now.</p>
+    <div class="end"><p class="big">Put yourself <span class="it">on the</span> map.</p><p class="hand votehand">vote jad + kenzie</p></div>
+    <div class="cta"><button class="btn" id="share" type="button">send to the group chat</button></div>
     <p class="foot mono">A student campaign page for the 2027 Tomorrow's Leaders Annual Symposium chair election at AUC. Photos are stills from the campaign's own video. Nothing here is an official TL announcement.</p>
   </section>
 </div>
-<div id="toast" role="status"></div>
+<div id="toast"<div id="toast" role="status"></div>
 
 <script>
 document.documentElement.classList.add('js');
@@ -361,18 +265,6 @@ function toast(t){var x=$('toast');x.textContent=t;x.classList.add('on');setTime
 var rv=[].slice.call(document.querySelectorAll('.rv'));
 if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(e){io.observe(e);});setTimeout(function(){rv.forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add('in');});},1200);}
 else rv.forEach(function(e){e.classList.add('in');});
-
-/* hero scrap: every dot is someone counted, one is missing */
-(function(){var cv=$('dots');function d(){var w=cv.clientWidth,h=cv.clientHeight,r=Math.min(2,devicePixelRatio||1);if(!w)return;cv.width=w*r;cv.height=h*r;var c=cv.getContext('2d');c.setTransform(r,0,0,r,0,0);var s=7,g=17,seed=5;function R(){seed=(seed*9301+49297)%233280;return seed/233280;}
- for(var y=g;y<h-6;y+=g)for(var x=g;x<w-6;x+=g){var v=R();c.beginPath();c.arc(x,y,v<.2?4.6:2.4,0,6.3);c.fillStyle=v<.07?'#F6D94A':v<.2?'#FFFDF8':'#FFFDF855';c.fill();}}
- d();addEventListener('resize',d);})();
-
-/* marquee */
-var mw=["what's in it for me?","✦","ايه اللي هستفيده؟","✦","is the money real?","✦","مين بيتحسب؟","✦"];
-for(var r=0;r<4;r++)mw.forEach(function(w){$('marq').appendChild(el('span',null,w));});
-
-/* carousel dots */
-(function(){var car=$('car'),ds=$('dotsNav').children;car.addEventListener('scroll',function(){var sl=car.children,best=0,bd=1e9,mid=car.scrollLeft+car.clientWidth/2;for(var i=0;i<sl.length;i++){var c=sl[i].offsetLeft-car.offsetLeft+sl[i].offsetWidth/2,dd=Math.abs(c-mid);if(dd<bd){bd=dd;best=i;}}for(var j=0;j<ds.length;j++)ds[j].classList.toggle('on',j===best);},{passive:true});})();
 
 /* ---------- Bosla brain ---------- */
 var FACTS=[
@@ -519,22 +411,6 @@ var TR=[
  {n:"Uncounted People",c:"var(--yellow)",k:"var(--ink)",l:"B",ar:"4/5",d:"People missing from the data that decisions get made on.",art:'<svg viewBox="0 0 200 250"><defs><pattern id="pp" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="17" cy="17" r="9" fill="#17130F"/></pattern></defs><rect y="70" width="200" height="180" fill="url(#pp)"/><circle cx="119" cy="155" r="13" fill="#F6D94A" stroke="#F24B2B" stroke-width="4" stroke-dasharray="5 5"/></svg>'},
  {n:"Unheard Voices",c:"var(--red)",k:"#fff",l:"C",ar:"4/5",d:"Dialects and languages that tech still doesn't understand.",art:'<svg viewBox="0 0 200 250" fill="#fff"><rect x="20" y="150" width="14" height="50" rx="7"/><rect x="46" y="118" width="14" height="114" rx="7"/><rect x="72" y="140" width="14" height="70" rx="7"/><rect x="98" y="100" width="14" height="150" rx="7"/><text x="158" y="130" text-anchor="middle" font-family="Rakkas,serif" font-size="120">ع</text></svg>'},
  {n:"Who Draws the Map?",c:"var(--ink)",k:"var(--yellow)",l:"D",ar:"1/1",d:"Who owns the data, builds the tools and makes the rules.",art:'<svg viewBox="0 0 200 200" fill="none" stroke="#F6D94A" stroke-width="5" stroke-linecap="round"><path d="M20 160c30-60 50 20 80-30s40-10 70-60"/><path d="m162 58 14 14-8 8-14-14z" fill="#F6D94A"/><path d="M30 60h50M30 80h30" stroke="#F2EEE3" opacity=".5"/></svg>'}];
-function trackPin(t){var b=el('button','pin rv');b.type='button';
-  var a=el('span','art');a.style.setProperty('--c',t.c);a.style.setProperty('--ar',t.ar);a.innerHTML=t.art;var k=el('span','k',t.l);k.style.color=t.k;a.appendChild(k);b.appendChild(a);
-  var h=el('span','heart','♡');h.setAttribute('role','button');h.setAttribute('aria-label','Save '+t.n);h.onclick=function(e){e.stopPropagation();var on=h.classList.toggle('on');h.textContent=on?'♥':'♡';if(on)toast('saved. good taste.');};b.appendChild(h);
-  var bd=el('span','bd');bd.appendChild(el('b',null,t.n));bd.appendChild(el('span','d',t.d));var g=el('span','go');g.appendChild(el('span',null,'ask bosla →'));g.appendChild(el('span','mono','track '+t.l));bd.appendChild(g);b.appendChild(bd);
-  b.onclick=function(){ask('Tell me about the '+t.n+' track',true);};return b;}
-function photoPin(src,cap,ar,alt){var f=el('figure','pin ph rv');var i=el('img');i.src=src;i.alt=alt;i.loading='lazy';i.style.setProperty('--ar',ar);f.style.setProperty('--ar',ar);f.appendChild(i);f.appendChild(el('figcaption',null,cap));return f;}
-var board=$('board');
-board.appendChild(trackPin(TR[0]));
-board.appendChild(photoPin('img/jad-talk.webp','"each track gets its own team"','4/5','Jad explaining in the library'));
-board.appendChild(trackPin(TR[2]));
-board.appendChild(trackPin(TR[1]));
-board.appendChild(el('div','pin q rv','pick the one that annoys you most. that one’s yours.'));
-board.appendChild(trackPin(TR[3]));
-board.appendChild(photoPin('img/jad-aisle.webp','the library, where this got planned','3/4','Jad in a library aisle'));
-[].slice.call(board.querySelectorAll('.rv')).forEach(function(e){if(window.IntersectionObserver&&!reduce){new IntersectionObserver(function(es,o){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');o.unobserve(x.target);}});}).observe(e);}else e.classList.add('in');});
-
 /* ---------- 3-tap match ---------- */
 var QS=[
  {q:"what lowkey annoys you the most?",o:[["my area is a grey blob on the map",0],["decisions made with data that ignores people like us",1],["my phone can't understand my arabic",2],["like five companies own everything",3]]},
