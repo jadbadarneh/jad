@@ -138,6 +138,7 @@ form{display:flex;gap:8px;padding:10px 12px;border-top:2px solid var(--ink)}
 @media (max-width:360px){.tracks{grid-template-columns:1fr}}
 @media (prefers-reduced-motion: reduce){.tape div,.youdot::after,.msg,.match,.pill i,.chat.busy .ava::before{animation:none}}
 </style>
+<script src="key.js"></script>
 </head><body>
 
 <div class="wrap">
@@ -303,7 +304,7 @@ function timed(url,opt,ms){var c=new AbortController();var t=setTimeout(function
 function tidy(s){s=String(s||'').split(/\n-{3,}\n/)[0].replace(/\*\*Sponsor[\s\S]*$/i,'').replace(/[*_#`]+/g,'').trim();if(s.length>700)s=s.slice(0,700);if(!s)throw new Error('empty');return s;}
 function pickText(j){return j&&j.choices&&j.choices[0]&&j.choices[0].message&&j.choices[0].message.content;}
 var PROVIDERS=[
- function(m){return timed('https://api.llm7.io/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json','Authorization':'Bearer unused'},body:JSON.stringify({model:window.__llm7model||'gpt-4.1-nano-2025-04-14',messages:m,temperature:0.8,max_tokens:220})},20000).then(function(r){return r.json();}).then(pickText);},
+ function(m){return timed('https://api.llm7.io/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json','Authorization':'Bearer '+(window.BOSLA_KEY||'unused')},body:JSON.stringify({model:window.BOSLA_MODEL||'mistral-Nemo-Instruct-2407',messages:m,temperature:0.8,max_tokens:300})},20000).then(function(r){return r.json();}).then(pickText);},
  function(m){return timed('https://text.pollinations.ai/openai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({model:'openai',messages:m,temperature:0.8,private:true})},25000).then(function(r){return r.json();}).then(pickText);},
  function(m){var sys=m[0].content,last=m[m.length-1].content;return timed('https://text.pollinations.ai/'+encodeURIComponent(last)+'?private=true&system='+encodeURIComponent(sys.slice(0,3500)),{},25000).then(function(r){return r.text();});}
 ];
