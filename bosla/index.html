@@ -32,17 +32,13 @@ h1{margin:22px 0 0;font-size:clamp(76px,27vw,170px);position:relative}
 h1 span{display:block}
 h1 .a{color:var(--lime)}
 h1 .b{color:transparent;-webkit-text-stroke:2.5px var(--w);margin-left:.16em}
-h1 .c{color:var(--pink)}
-.duo{position:relative;margin-top:-5vw;padding-top:9%}
-.stage{position:relative;width:100%;aspect-ratio:1/.98;border-radius:999px 999px 26px 26px;background:var(--pink);overflow:hidden}
-.stage::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 26px,#ffffff1f 26px 28px)}
-.stage img{position:absolute;left:50%;bottom:0;width:98%;transform:translateX(-50%)}
-.arch{position:absolute;left:4%;bottom:0;width:46%;aspect-ratio:3/4;border-radius:999px 999px 0 0;overflow:hidden;background:var(--pink);border:3px solid var(--w)}
-.circ{position:absolute;right:3%;bottom:6%;width:50%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--sky);border:3px solid var(--w)}
-.arch img,.circ img{width:100%;height:100%;object-fit:cover}
-.badge{position:absolute;right:-2%;top:0;width:31%;max-width:160px;aspect-ratio:1;z-index:3;animation:spin 16s linear infinite}
+h1 .c{color:var(--sky)}
+.duo{position:relative;margin-top:-9vw;z-index:2}
+.duo .shape{position:absolute;left:0;right:0;top:20%;bottom:0;background:var(--pink);border-radius:999px 999px 0 0}
+.duo img{position:relative;width:100%;height:auto;display:block}
+.badge{position:absolute;right:-2%;top:6%;width:30%;max-width:150px;aspect-ratio:1;z-index:3;animation:spin 16s linear infinite}
 .badge svg{width:100%;height:100%;display:block}
-.names{display:flex;justify-content:space-between;margin-top:8px;padding:0 6%}
+.names{display:flex;justify-content:space-between;margin-top:10px;padding:0 10%}
 .lede{font-size:19px;font-weight:500;margin:20px 0 0;max-width:24em}
 .lede b{color:var(--lime);font-weight:800}
 .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
@@ -126,7 +122,8 @@ h1 .c{color:var(--pink)}
     <div class="topline"><span class="tag">TL Symposium 2027 · AUC</span><span class="ar" lang="ar">خارج الخريطة</span></div>
     <h1 class="x"><span class="a">Off</span><span class="b">The</span><span class="c">Map</span></h1>
     <div class="duo">
-      <div class="stage"><img src="img/duo.webp" alt="Jad and Kenzie"></div>
+      <div class="shape" aria-hidden="true"></div>
+      <img src="img/jad-kenzie-cut.webp" alt="Jad and Kenzie" width="900" height="935">
       <div class="badge" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#CDF564"/><defs><path id="c" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs><text font-family="Archivo,Arial Black,sans-serif" font-weight="900" font-size="23" letter-spacing="2.5" fill="#0B0B0F"><textPath href="#c">VOTE JAD + KENZIE ✦ VOTE JAD + KENZIE ✦</textPath></text><text x="100" y="118" text-anchor="middle" font-size="54" fill="#0B0B0F">✦</text></svg></div>
     </div>
     <div class="names tag"><span>Jad · chair</span><span>Kenzie · vice chair</span></div>
